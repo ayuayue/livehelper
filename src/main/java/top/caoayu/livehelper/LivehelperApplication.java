@@ -6,7 +6,6 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @SpringBootApplication
-//@ComponentScan("top.caoayu.livehelper.interceptor")
 public class LivehelperApplication {
 
     public static void main(String[] args) {

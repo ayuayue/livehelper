@@ -1,11 +1,15 @@
 
 .PHONY: package
 package:
-	mvn  -DarchetypeCatalog=internal clean package
+	mvn   clean package -DarchetypeCatalog=internal
 
 .PHONY: clean
 clean:
 	mvn clean
+
+.PHONY: install
+install:
+	mvn clean install
 
 # 以 debug 模式运行
 .PHONY: debug
@@ -17,20 +21,20 @@ run:
 
 .PHONY: compile
 compile:
-	 mvn compile
+	 mvn clean compile
 
 ## run a jar file on different environment
 .PHONY: dev
 dev:
-	make package
+	make clean package
 	java -Dspring.profiles.active=dev -jar target/livehelper-0.0.1-SNAPSHOT.jar
 
 .PHONY: pro
 pro:
-	make package
+	make clean package
 	java -Dspring.devtools.restart.enabled=false -Dspring.profiles.active=pro -jar target/livehelper-0.0.1-SNAPSHOT.jar
 
 .PHONY: test
 test:
-	make package
+	make clean package
 	java -Dspring.profiles.active=test -jar target/livehelper-0.0.1-SNAPSHOT.jar

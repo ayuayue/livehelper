@@ -1,50 +1,56 @@
----
-# 开发环境的参数
-server:
-  port: 8080
-# 定义开发环境
-spring:
-  config:
-    activate:
-      on-profile: dev
-  devtools:
-    livereload:
-      enabled: true
-    restart:
-      enabled: true
-      additional-exclude: src/main/java
-      exclude: WEB-INF/
-      poll-interval: 20ms
-      quiet-period: 10ms
-
----
-# 测试环境的参数
-server:
-  port: 8081
-
-# 定义测试环境
-spring:
-  config:
-    activate:
-      on-profile: test
-  devtools:
-    livereload:
-      enabled: true
----
-# 生产环境的参数
-server:
-  port: 8082
-
-# 定义生产环境
-spring:
-  config:
-    activate:
-      on-profile: pro
-  devtools:
-    livereload:
-      enabled: false
----
-# 配置使用哪个环境的参数
-spring:
-  profiles:
-    active: dev
+#---
+## 开发环境的参数
+#server:
+#  port: 8080
+#
+## 定义开发环境
+#spring:
+#  config:
+#    activate:
+#      on-profile: dev
+#  devtools:
+#    livereload:
+#      enabled: true
+#    restart:
+#      enabled: true
+#      additional-exclude: src/main/java
+#      exclude: WEB-INF/
+#      poll-interval: 20ms
+#      quiet-period: 10ms
+#
+#  datasource:
+#    url: jdbc:mysql://localhost:3306/
+#    username: root
+#    password: root
+#
+#---
+## 测试环境的参数
+#server:
+#  port: 8081
+#
+## 定义测试环境
+#spring:
+#  config:
+#    activate:
+#      on-profile: test
+#  devtools:
+#    livereload:
+#      enabled: true
+#---
+## 生产环境的参数
+#server:
+#  port: 8082
+#
+## 定义生产环境
+#spring:
+#  config:
+#    activate:
+#      on-profile: pro
+#  devtools:
+#    livereload:
+#      enabled: false
+#---
+## 配置使用哪个环境的参数
+#spring:
+#  profiles:
+#    active: dev
