@@ -7,10 +7,13 @@ package:
 clean:
 	mvn clean
 
+# 以 debug 模式运行
+.PHONY: debug
+debug:
+	mvn spring-boot:run -Dspring-boot.run.jvmArguments="-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=5005"
 .PHONY: run
 run:
 	mvn spring-boot:run
-
 
 .PHONY: compile
 compile:

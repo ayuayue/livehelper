@@ -9,13 +9,13 @@ spring:
       on-profile: dev
   devtools:
     livereload:
-      enabled: false
+      enabled: true
     restart:
       enabled: true
       additional-exclude: src/main/java
       exclude: WEB-INF/
-      poll-interval: 200ms
-      quiet-period: 100ms
+      poll-interval: 20ms
+      quiet-period: 10ms
 
 ---
 # 测试环境的参数
