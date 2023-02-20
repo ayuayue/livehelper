@@ -12,12 +12,13 @@ import top.caoayu.livehelper.service.impl.UserService;
 import java.util.List;
 
 @RestController
-@RequestMapping("/users/")
+@RequestMapping("/users")
 public class UserController {
     @Autowired
     private UserService userService;
+
     @GetMapping
-    public List<UserDto> findUserByName(@RequestParam("name") String name){
+    public List<UserDto> findUserByName(@RequestParam("name") String name) {
         return userService.findUsersByName(name);
     }
 }

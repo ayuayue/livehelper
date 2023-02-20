@@ -1,0 +1,1 @@
+create schema if not exists livehelper collate utf8mb4_unicode_ci;

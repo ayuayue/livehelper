@@ -10,10 +10,14 @@ public class UserEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "name")
+    @Column(nullable = false, name = "name")
     private String name;
     @Column(name = "email")
     private String email;
+    @Column(name = "age")
+    private String age;
+    @Column(name = "password",nullable = false)
+    private String password;
 
     public Long getId() {
         return id;
@@ -37,5 +41,21 @@ public class UserEntity {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getAge() {
+        return age;
+    }
+
+    public void setAge(String age) {
+        this.age = age;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 }

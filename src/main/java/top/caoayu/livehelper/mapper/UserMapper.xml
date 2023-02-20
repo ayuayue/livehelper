@@ -1,0 +1,45 @@
+<mapper namespace="top.caoayu.livehelper.mapper.UserEntityMapper">
+    <sql id="table">
+        CREATE TABLE IF NOT EXISTS `UserEntity`
+        (
+            `id`    INT(11)     NOT NULL AUTO_INCREMENT,
+            `name`  VARCHAR(128) NOT NULL,
+            `age`   INT(11),
+            `password` VARCHAR(128) NOT NULL,
+            `email` varchar(128),
+            PRIMARY KEY (`id`)
+        ) ENGINE = InnoDB
+          DEFAULT CHARSET = utf8mb4
+          COLLATE = utf8mb4_general_ci;
+    </sql>
+    <select id="createTable" resultType="int">
+        ${table}
+    </select>
+    <resultMap id="UserEntityResultMap" type="top.caoayu.livehelper.entity.UserEntity">
+        <id property="id" column="id"/>
+        <result property="name" column="name"/>
+        <result property="age" column="age"/>
+        <result property="password" column="password"/>
+        <result property="email" column="email"/>
+    </resultMap>
+
+    <select id="findAll" resultMap="UserEntityResultMap">
+        SELECT * FROM UserEntitys
+    </select>
+
+    <select id="findById" resultMap="UserEntityResultMap" parameterType="long">
+        SELECT * FROM UserEntitys WHERE id=#{id}
+    </select>
+
+    <insert id="save" parameterType="top.caoayu.livehelper.entity.UserEntity">
+        INSERT INTO UserEntitys(name, age) VALUES(#{name}, #{age})
+    </insert>
+
+    <update id="update" parameterType="top.caoayu.livehelper.entity.UserEntity">
+        UPDATE UserEntitys SET name=#{name}, age=#{age} WHERE id=#{id}
+    </update>
+
+    <delete id="delete" parameterType="long">
+        DELETE FROM UserEntitys WHERE id=#{id}
+    </delete>
+</mapper>
