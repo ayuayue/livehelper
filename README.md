@@ -1,5 +1,7 @@
 一个使用 chatgpt 学习开发的 springboot 应用。
 
+开发遵守规范：https://pdai.tech/md/develop/ut/dev-qt-overview.html
+
 1. 配置使用 properties 文件。
 2. 加入 makefile ，配合 mvn 实现快捷操作。
 3. 配合 idea 实现修改代码，自动构建。也可以仅使用 maven pom.xml 来实现。

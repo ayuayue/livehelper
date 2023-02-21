@@ -1,11 +1,10 @@
+
 package top.caoayu.livehelper;
 
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
-import org.springframework.web.bind.annotation.RequestMapping;
 
 @SpringBootApplication
 @EnableJpaRepositories(basePackages = "top.caoayu.livehelper.repository")

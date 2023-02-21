@@ -7,12 +7,11 @@ import top.caoayu.livehelper.entity.UserEntity;
 import top.caoayu.livehelper.mapper.UserMapper;
 import top.caoayu.livehelper.repository.UserRepository;
 import top.caoayu.livehelper.service.UserServiceInterface;
-
 import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
-public class UserService implements UserServiceInterface {
+public class UserServiceImpl implements UserServiceInterface {
     @Autowired
     private UserRepository userRepository;
     @Autowired
