@@ -1,20 +1,17 @@
-package top.caoayu.livehelper.common.config.response;/*
+package top.caoayu.livehelper.common.config.response;
+/*
  *
  * @version 2023/2/21 16:28
  * @author 14012
  */
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
-
-@Component
+import java.io.Serializable;
 public class ResponseResult<T> {
-    @Autowired
-    private ResponseStatus responseStatus;
     private Long timestamp;
     private String status;
     private String message;
     private T data;
+    public ResponseResult(){}
 
     public ResponseResult(Long timestamp, String status, String message, T data) {
         this.timestamp = timestamp;
@@ -55,10 +52,16 @@ public class ResponseResult<T> {
         this.data = data;
     }
 
-//    public static <T> ResponseResult<T> success(){
-//        return success(null);
-//    }
-//    public static <T> ResponseResult<T> success(T data){
-//
-//    }
+    public static <T> ResponseResult<T> success(){
+        return success(null);
+    }
+    public static <T> ResponseResult<T> success(T data){
+        return new ResponseResult<>(System.currentTimeMillis(),ResponseStatus.SUCCESS.getResponseCode(),ResponseStatus.SUCCESS.getDescription(),data);
+    }
+    public static <T extends Serializable> ResponseResult<T> fail(String message){
+        return fail(null,message);
+    }
+    public static <T> ResponseResult<T> fail(T data, String message){
+        return new ResponseResult<>(System.currentTimeMillis(),ResponseStatus.FAIL.getResponseCode(), message,data);
+    }
 }

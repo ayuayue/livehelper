@@ -5,7 +5,6 @@ package top.caoayu.livehelper.common.config.response;/*
  */
 
 import java.util.List;
-
 public enum ResponseStatus {
 
     SUCCESS("200", "success"),
@@ -17,15 +16,16 @@ public enum ResponseStatus {
     HTTP_STATUS_403("403", "no authorities"),
     HTTP_STATUS_500("500", "server error");
 
+
+
+    public static final List<ResponseStatus> HTTP_STATUS_ALL = List.of(HTTP_STATUS_200, HTTP_STATUS_403, HTTP_STATUS_400, HTTP_STATUS_401, HTTP_STATUS_500);
     private final String responseCode;
     private final String description;
-
-    ResponseStatus(String responseCode, String description) {
+    private ResponseStatus(String responseCode, String description) {
         this.responseCode = responseCode;
         this.description = description;
     }
 
-    public static final List<ResponseStatus> HTTP_STATUS_ALL = List.of(HTTP_STATUS_200, HTTP_STATUS_403, HTTP_STATUS_400, HTTP_STATUS_401, HTTP_STATUS_500);
     public String getResponseCode() {
         return responseCode;
     }

@@ -1,1 +1,1 @@
-create database if not exists livehelper collate utf8mb4_unicode_ci;
+create database  livehelper collate utf8mb4_unicode_ci;
