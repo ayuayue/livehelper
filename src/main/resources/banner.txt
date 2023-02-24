@@ -9,7 +9,3 @@
                            |_|
 ---------------
 # springboot的版本号: ${spring-boot.formatted-version}
-# MANIFEST.MF文件中的版本号: ${application.formatted-version}
-# MANIFEST.MF文件中的程序名称: ${application.title}
-# ANSI样色/样式等: ${Ansi.NAME} (or ${AnsiColor.NAME}, ${AnsiBackground.NAME}, ${AnsiStyle.NAME})
-

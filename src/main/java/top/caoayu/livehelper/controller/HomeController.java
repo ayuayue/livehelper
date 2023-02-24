@@ -28,4 +28,5 @@ public class HomeController {
         map.put("age", 18);
         return ResponseResult.success(List.of(map));
     }
+
 }
