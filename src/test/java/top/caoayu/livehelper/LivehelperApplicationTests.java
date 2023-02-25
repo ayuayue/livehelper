@@ -6,9 +6,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
 class LivehelperApplicationTests {
-	@Ignore
-	@Test
-	void contextLoads() {
-	}
+
 
 }
